@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EaglerCraft</title>
+</head>
+
+<body style="margin:0; background:black; overflow:hidden;">
+
+<button id="startButton"
+style="
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:30px;
+padding:20px 40px;
+z-index:10;
+">
+START GAME
+</button>
+
+<video id="intro"
+style="width:100vw; height:100vh; object-fit:cover; display:none;"
+playsinline>
+    <source src="intro.mp4" type="video/mp4">
+</video>
+
+<script>
+const button = document.getElementById("startButton");
+const video = document.getElementById("intro");
+
+button.onclick = function() {
+    button.style.display = "none";
+    video.style.display = "block";
+    video.play();
+};
+
+video.onended = function() {
+    window.location.href = "gane.html";
+};
+</script>
+
+</body>
+</html>
